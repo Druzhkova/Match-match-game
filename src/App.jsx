@@ -1,11 +1,13 @@
 import React from 'react';
-import { Button, Card } from './components';
+import { Button, Card, Board } from './components';
 
 function App() {
   return (
     <>
       <Button>New Game</Button>
-      <Card frontImg="/images/сhristmas-tree.jpg" backImg="/images/christmas_presents.jpg" />
+      <Board>
+        <Card frontImg="/images/сhristmas-tree.jpg" backImg="/images/christmas_presents.jpg" />
+      </Board>
     </>
   );
 }

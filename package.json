@@ -26,7 +26,10 @@
       "airbnb"
     ],
     "rules": {
-      "react/button-has-type": 1
+      "react/button-has-type": 1,
+      "linebreak-style": 0,
+      "react/prop-types": 0,
+      "import/prefer-default-export": 0
     }
   },
   "browserslist": {

@@ -1,15 +1,8 @@
 import React from 'react';
-import { Button, Card, Board } from './components';
+import { MatchMatchGame } from './MatchMatchGame';
 
 function App() {
-  return (
-    <>
-      <Button>New Game</Button>
-      <Board>
-        <Card frontImg="/images/сhristmas-tree.jpg" backImg="/images/christmas_presents.jpg" />
-      </Board>
-    </>
-  );
+  return <MatchMatchGame />;
 }
 
 export default App;

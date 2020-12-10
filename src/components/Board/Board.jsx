@@ -12,5 +12,6 @@ const CardBoard = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   padding: 20px;
-  background-color: skyblue;
+  background-color: #2c3e50;
+  box-shadow: 3px 3px 5px black;
 `;

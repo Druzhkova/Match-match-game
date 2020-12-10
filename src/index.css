@@ -17,7 +17,6 @@ html,body{
 	margin: 0;
 	height: 100%;
 	width: 100%;
-	font-family: sans-serif;
 	line-height: 1.5;
 	font-size: 14px;
 	-ms-text-size-adjust: 100%;
@@ -43,6 +42,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: lightsteelblue;
+	background: #031321;
 	min-height: 100vh;
 }

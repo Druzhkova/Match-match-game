@@ -1,8 +1,8 @@
 import React from 'react';
-import { MatchMatchGame } from './MatchMatchGame';
+import { MainPage } from './MainPage';
 
 function App() {
-  return <MatchMatchGame />;
+  return <MainPage />;
 }
 
 export default App;

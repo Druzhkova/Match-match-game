@@ -1,11 +1,11 @@
 import { OPEN_CARD } from './actions';
 
-const itialState = {
+const initialState = {
   card: [],
   openCard: false,
 };
 
-export function matchMatchGameReduser(state = itialState, action) {
+export function mainPageReduser(state = initialState, action) {
   switch (action.type) {
     case OPEN_CARD: {
       return {

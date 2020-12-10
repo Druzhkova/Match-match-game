@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { matchMatchGameReduser } from '../MatchMatchGame';
+import { mainPageReduser } from '../MainPage';
 
-export const rootReducer = combineReducers({ matchMatchGame: matchMatchGameReduser });
+export const rootReducer = combineReducers({ matchMatchGame: mainPageReduser });

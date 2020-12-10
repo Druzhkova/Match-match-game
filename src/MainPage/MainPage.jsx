@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Card, Board } from '../components';
+import { Button, Board } from '../components';
+import { Card } from './components';
 
-export function MatchMatchGame() {
+export function MainPage() {
   return (
     <>
       <Button>New Game</Button>

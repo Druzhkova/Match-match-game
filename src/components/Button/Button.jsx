@@ -6,7 +6,8 @@ export function Button({ onClick, children }) {
 }
 
 const StyledButton = styled.button`
-    background: #007597;
+    background: #5da0d6;
+    letter-spacing: 1px;
     color: #ffffff;
     border: none;
     box-shadow: 0 0 5px black;
@@ -14,15 +15,13 @@ const StyledButton = styled.button`
     cursor: pointer;
     width: auto;
     min-width: 65px;
+
      &:hover {
-      background:#0075AA;
-       transform: translateY(-2px);
-       box-shadow: 0 2px 0 #003b6b;
+      background:#1d5c8e;
      }
 
      &:active {
-      background:#007597;
-      transform: translateY(-1px);
-      box-shadow: 0 1px 0 #003b6b;
+      background:#1d5c8e;
+      box-shadow: 0 0 10px black;
     }
 `;

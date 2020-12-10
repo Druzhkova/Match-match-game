@@ -43,5 +43,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	align-items: center;
 	flex-direction: column;
 	background: #031321;
+	letter-spacing: 1px;
 	min-height: 100vh;
 }

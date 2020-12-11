@@ -13,6 +13,7 @@ export function GameDifficultyCard() {
 }
 
 const Container = styled.div`
+  max-width: 160px; 
   display: flex;
   align-items: center;
   justify-content: center;

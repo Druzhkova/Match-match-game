@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { chooseSkirtCard } from '../../actions';
 
 export function SkirtSelectionCard() {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Title>Skirt cards</Title>
       <div>
-        <Image src="/images/сhristmas-tree.jpg" />
-        <Image src="/images/snow-maiden.jpg" />
-        <Image src="/images/santa-claus.jpg" />
+        <Image onClick={() => dispatch(chooseSkirtCard('сhristmas-tree'))} src="/images/сhristmas-tree.jpg" />
+        <Image onClick={() => dispatch(chooseSkirtCard('snow-maiden'))} src="/images/snow-maiden.jpg" />
+        <Image onClick={() => dispatch(chooseSkirtCard('santa-claus'))} src="/images/santa-claus.jpg" />
       </div>
     </Container>
   );
@@ -29,6 +33,7 @@ const Container = styled.div`
 const Title = styled.p`
   margin: 0 0 15px 0;
   font-weight: bold;
+  font-size: 18px;
 `;
 
 const Image = styled.img`

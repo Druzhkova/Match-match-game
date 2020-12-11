@@ -1,9 +1,10 @@
-import { OPEN_CARD, GO_TO_MAIN_PAGE } from './actions';
+import { OPEN_CARD } from './actions';
 
 const initialState = {
   card: [],
   openCard: false,
-  loginPage: true,
+  columnsCount: null,
+  rowСount: null,
 };
 
 export function mainPageReduser(state = initialState, action) {
@@ -12,13 +13,6 @@ export function mainPageReduser(state = initialState, action) {
       return {
         ...state,
         openCard: !state.openCard,
-      };
-    }
-
-    case GO_TO_MAIN_PAGE: {
-      return {
-        ...state,
-        loginPage: !state.loginPage,
       };
     }
 

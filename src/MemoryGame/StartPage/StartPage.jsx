@@ -14,7 +14,7 @@ export function StartPage() {
   }, [setDisplaySpan]);
 
   return (
-    <Link to="/login">
+    <Link to="/authorization">
       <Button onMouseOver={hideButtonOutline} onMouseOut={showButtonOutline}>
         <Span display={displaySpan} />
         <Span display={displaySpan} />

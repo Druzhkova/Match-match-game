@@ -10,8 +10,10 @@ export function LoginPage() {
         <Link to="/main">
           <Button>Start Game</Button>
         </Link>
-        <GameDifficultyCard />
-        <SkirtSelectionCard />
+        <div>
+          <GameDifficultyCard />
+          <SkirtSelectionCard />
+        </div>
       </Board>
     </>
   );

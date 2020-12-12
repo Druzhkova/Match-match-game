@@ -5,7 +5,7 @@ const initialState = {
   skirtCard: '',
 };
 
-export function loginPageReducer(state = initialState, action) {
+export function UserProfileReducer(state = initialState, action) {
   switch (action.type) {
     case CHOOSE_DIFFICULTY_GAME: {
       return {

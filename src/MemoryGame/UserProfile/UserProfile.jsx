@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, Board } from '../components';
 import { GameDifficultyCard, SkirtSelectionCard } from './components';
 
-export function LoginPage() {
+export function UserProfile() {
   return (
     <>
       <Board>

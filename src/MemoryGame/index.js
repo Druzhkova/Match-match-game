@@ -1,4 +1,4 @@
 export { StartPage } from './StartPage';
-export { LoginPage } from './LoginPage';
+export { UserProfile } from './UserProfile';
 export { MainPage } from './MainPage';
 export { AuthorizationPage } from './AuthorizationPage';

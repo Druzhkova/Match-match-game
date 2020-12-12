@@ -1,4 +1,10 @@
 export { StartPage } from './StartPage';
-export { UserProfile } from './UserProfile';
-export { MainPage } from './MainPage';
-export { AuthorizationPage } from './AuthorizationPage';
+export {
+  AuthorizationPage,
+  authorizationReducer,
+  authorizationMiddleware,
+  bootstrapMiddleware,
+  logoutMiddleware,
+} from './AuthorizationPage';
+export { UserProfile, UserProfileReducer } from './UserProfile';
+export { MainPage, mainPageReduser } from './MainPage';

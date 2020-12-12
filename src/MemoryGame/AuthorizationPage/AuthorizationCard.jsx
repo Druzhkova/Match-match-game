@@ -1,33 +1,44 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Button } from '../components';
+import { authorizationRequest } from './actions';
 
 export function AuthorizationPage() {
   const [name, setName] = useState('');
-  const [surname, seSurname] = useState('');
+  const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
+
+  const dispatch = useDispatch();
 
   const nameHundler = useCallback((e) => {
     setName(e.target.value);
   }, []);
 
   const surnameHundler = useCallback((e) => {
-    seSurname(e.target.value);
+    setSurname(e.target.value);
   }, []);
 
   const emailHundler = useCallback((e) => {
     setEmail(e.target.value);
   }, []);
 
+  const authorization = useCallback(() => {
+    dispatch(authorizationRequest({ name, surname, email }));
+    setName('');
+    setSurname('');
+    setEmail('');
+  }, [dispatch, name, surname, email]);
+
   return (
     <Container>
       <Title>Fill out your profile</Title>
       <Form>
-        <Input onInput={nameHundler} value={name} type="text" placeholder="name" />
-        <Input onInput={surnameHundler} value={surname} type="text" placeholder="surname" />
-        <Input onInput={emailHundler} value={email} type="email" placeholder="email" />
-        <Link to="/login"><Button onClick={console.log('ok')}>Save</Button></Link>
+        <Input onChange={nameHundler} value={name} type="text" placeholder="name" />
+        <Input onChange={surnameHundler} value={surname} type="text" placeholder="surname" />
+        <Input onChange={emailHundler} value={email} type="email" placeholder="email" />
+        <Link to="/login"><Button onClick={authorization}>Save</Button></Link>
       </Form>
     </Container>
   );

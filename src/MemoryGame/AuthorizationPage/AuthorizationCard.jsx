@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button } from '../LoginPage/components/GameDifficultyCard/components';
+import { Button } from '../components';
 
 export function AuthorizationPage() {
   const [name, setName] = useState('');

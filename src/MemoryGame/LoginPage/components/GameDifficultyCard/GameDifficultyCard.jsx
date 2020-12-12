@@ -1,15 +1,11 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { Button } from './components';
+import { Button } from '../../../components';
 import { chooseDifficultyGame } from '../../actions';
 
 export function GameDifficultyCard() {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-
-  }, []);
 
   const chooseLevelLow = useCallback(() => {
     dispatch(chooseDifficultyGame('Low'));
@@ -28,7 +24,7 @@ export function GameDifficultyCard() {
       <Title>Game Difficulty</Title>
       <Button onClick={chooseLevelLow}>Low (5*2)</Button>
       <Button onClick={chooseLevelMedium}>Medium (6*3)</Button>
-      <Button onClick={chooseLevelHight}>Hight (8*3)</Button>
+      <Button style={{ width: 1000 }} onClick={chooseLevelHight}>Hight (8*3)</Button>
     </Container>
   );
 }

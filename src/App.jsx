@@ -1,22 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // import { Route, Switch, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import {
-  UserProfile, AuthorizationPage,
+  MemoryGame,
 } from './MemoryGame';
 
-import { bootstrapStart } from './MemoryGame/AuthorizationPage/actions';
-
 function App() {
-  const { bootstraped, isAuthorized } = useSelector((state) => state.authorizationPage);
-
-  const renderMainContent = () => (isAuthorized ? <UserProfile /> : <AuthorizationPage />);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(bootstrapStart());
-  }, [dispatch]);
-  return bootstraped
-    ? renderMainContent() : null;
+  return <MemoryGame />;
   // <div>
   //   <Switch>
   //     <Route exact path="/" component={StartPage} />

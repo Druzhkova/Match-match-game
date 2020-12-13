@@ -1,4 +1,3 @@
-export { StartPage } from './StartPage';
 export {
   AuthorizationPage,
   authorizationReducer,

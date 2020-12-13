@@ -24,13 +24,13 @@ export function GameDifficultyCard() {
       <Title>Game Difficulty</Title>
       <Button onClick={chooseLevelLow}>Low (5*2)</Button>
       <Button onClick={chooseLevelMedium}>Medium (6*3)</Button>
-      <Button style={{ width: 1000 }} onClick={chooseLevelHight}>Hight (8*3)</Button>
+      <Button onClick={chooseLevelHight}>Hight (8*3)</Button>
     </Container>
   );
 }
 
 const Container = styled.div`
-  max-width: 160px; 
+  max-width: 200px; 
   display: flex;
   align-items: center;
   justify-content: center;

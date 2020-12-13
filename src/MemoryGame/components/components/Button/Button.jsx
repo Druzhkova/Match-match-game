@@ -8,11 +8,13 @@ export function Button({ children, onClick }) {
 }
 
 const StyledButton = styled.button`
-  padding: 5px 20px;
-  margin: 5px 0;
+  width: 100%;
+  padding: 5px 25px;
+  margin: 15px 0 0 0;
   color: #fff;
   background: #5da0d6;
   border: none;
+  font-size: 16px;
   box-shadow: 0 0 5px black;
 
   &:hover {

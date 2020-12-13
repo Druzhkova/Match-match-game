@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 import { Button, Board } from '../components';
 import { GameDifficultyCard, SkirtSelectionCard } from './components';
 import { logout as logoutAction } from '../AuthorizationPage/actions';
@@ -15,15 +15,24 @@ export function UserProfile() {
   return (
     <>
       <Board>
-        <Button onClick={logout}>Logout</Button>
-        <Link to="/main">
-          <Button>Start Game</Button>
-        </Link>
-        <div>
-          <GameDifficultyCard />
-          <SkirtSelectionCard />
-        </div>
+        <Container>
+          <div>
+            <Button onClick={logout}>Logout</Button>
+            <Button>Start Game</Button>
+          </div>
+          <div>
+            <GameDifficultyCard />
+            <SkirtSelectionCard />
+          </div>
+        </Container>
       </Board>
     </>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;

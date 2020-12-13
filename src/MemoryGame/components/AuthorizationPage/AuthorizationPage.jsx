@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Button } from '../components';
+import { Button, Board } from '../components';
 import { authorizationRequest } from './actions';
 
 export function AuthorizationPage() {
@@ -63,13 +63,15 @@ export function AuthorizationPage() {
         <span>Start memory game</span>
       </StartButton>
       <Container display={displayContainerForm}>
-        <Title>Fill out your profile</Title>
-        <Form>
-          <Input onChange={nameHundler} value={name} type="text" placeholder="name" />
-          <Input onChange={surnameHundler} value={surname} type="text" placeholder="surname" />
-          <Input onChange={emailHundler} value={email} type="email" placeholder="email" />
-          <Link to="/login"><Button onClick={authorization}>Save</Button></Link>
-        </Form>
+        <Board>
+          <Title>Fill out your profile</Title>
+          <Form>
+            <Input onChange={nameHundler} value={name} type="text" placeholder="name" />
+            <Input onChange={surnameHundler} value={surname} type="text" placeholder="surname" />
+            <Input onChange={emailHundler} value={email} type="email" placeholder="email" />
+            <Button onClick={authorization}>Save</Button>
+          </Form>
+        </Board>
       </Container>
     </>
   );
@@ -77,20 +79,14 @@ export function AuthorizationPage() {
 
 const Container = styled.div`
   display: ${(props) => props.display};
-  max-width: 400px; 
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px;
   color: #fff;
-  background: #2f6d9f;
-  box-shadow: 0 0 5px black;
 `;
 
 const Title = styled.p`
   margin: 0 0 15px 0;
   font-weight: bold;
   font-size: 18px;
+  letter-spacing: 1.3px;
 `;
 
 const Input = styled.input`

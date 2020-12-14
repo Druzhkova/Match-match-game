@@ -9,19 +9,21 @@ export function Button({ children, onClick }) {
 
 const StyledButton = styled.button`
   width: 100%;
-  padding: 5px 25px;
   margin: 15px 0 0 0;
-  color: #fff;
-  background: #5da0d6;
-  border: none;
-  font-size: 16px;
-  box-shadow: 0 0 5px black;
+  padding: 10px 16px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    background: #5da0d6;
+    box-shadow: 0 2px 0 #215076;
 
   &:hover {
-    background:#1d5c8e;
+    background: #28608f;
   }
 
   &:active {
-    box-shadow: 0 0 10px black;
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #215076;
   }
 `;

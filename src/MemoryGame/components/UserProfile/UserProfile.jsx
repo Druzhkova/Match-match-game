@@ -1,16 +1,23 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import { Button, Board } from '../components';
 import { GameDifficultyCard, SkirtSelectionCard } from './components';
 import { logout as logoutAction } from '../AuthorizationPage/actions';
 
 export function UserProfile() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const logout = useCallback(() => {
     dispatch(logoutAction());
-  }, [dispatch]);
+    history.push('/');
+  }, [dispatch, history]);
+
+  const goToMainPage = useCallback(() => {
+    history.push('/main');
+  }, [history]);
 
   return (
     <>
@@ -18,7 +25,7 @@ export function UserProfile() {
         <Container>
           <div>
             <Button onClick={logout}>Logout</Button>
-            <Button>Start Game</Button>
+            <Button onClick={goToMainPage}>Start Game</Button>
           </div>
           <div>
             <GameDifficultyCard />

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Button, Board } from '../components';
 import { authorizationRequest } from './actions';
 
@@ -13,6 +13,8 @@ export function AuthorizationPage() {
 
   const [displayButton, setDisplayButton] = useState('flex');
   const [displayContainerForm, setDisplayContainerForm] = useState('none');
+
+  const history = useHistory();
 
   const dispatch = useDispatch();
 
@@ -33,7 +35,8 @@ export function AuthorizationPage() {
     setName('');
     setSurname('');
     setEmail('');
-  }, [dispatch, name, surname, email]);
+    history.push('/user');
+  }, [dispatch, name, surname, email, history]);
 
   const showButtonOutline = useCallback(() => {
     setDisplaySpan('block');
@@ -92,6 +95,7 @@ const Title = styled.p`
 const Input = styled.input`
   padding: 5px 10px;
   margin-bottom: 10px;
+  border-radius: 6px;
 `;
 
 const Form = styled.form`

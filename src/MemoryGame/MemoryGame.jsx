@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import { Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   AuthorizationPage, UserProfile,
@@ -17,13 +16,4 @@ export function MemoryGame() {
   }, [dispatch]);
   return bootstraped
     ? renderMainContent() : null;
-  // <div>
-  //   <Switch>
-  //     <Route exact path="/" component={StartPage} />
-  //     <Route path="/authorization" component={AuthorizationPage} />
-  //     <Route path="/login" component={UserProfile} />
-  //     <Route path="/main" component={MainPage} />
-  //     <Redirect to="/" />
-  //   </Switch>
-  // </div>
 }

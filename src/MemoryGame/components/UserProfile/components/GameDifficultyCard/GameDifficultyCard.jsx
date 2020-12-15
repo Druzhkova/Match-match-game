@@ -36,6 +36,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 20px;
+  margin-right: 20px;
   color: #fff;
   background: #2f6d9f;
   box-shadow: 0 0 5px black;

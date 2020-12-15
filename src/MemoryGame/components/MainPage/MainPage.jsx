@@ -72,14 +72,18 @@ export function MainPage() {
 }
 
 const Timer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 90%;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
 `;
 
 const Container = styled.div`
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

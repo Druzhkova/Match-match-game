@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
-export function Card({ frontImg, backImg, onClick }) {
+export function Card({ frontImg, backImg }) { // add onClick
   const [rotateCard, setRotateCard] = useState(0);
 
   const onClickHandler = useCallback(() => {
     setRotateCard(180);
-    onClick();
-  }, [setRotateCard, onClick]);
+    // onClick();
+  }, [setRotateCard]);
 
   return (
     <Container rotateCard={rotateCard}>

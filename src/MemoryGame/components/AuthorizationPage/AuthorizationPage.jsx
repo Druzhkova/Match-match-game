@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, Board } from '../components';
+import { Button, Board, Input } from '../components';
 import { authorizationRequest } from './actions';
 
 export function AuthorizationPage() {
@@ -18,23 +18,8 @@ export function AuthorizationPage() {
 
   const dispatch = useDispatch();
 
-  const nameHundler = useCallback((e) => {
-    setName(e.target.value);
-  }, []);
-
-  const surnameHundler = useCallback((e) => {
-    setSurname(e.target.value);
-  }, []);
-
-  const emailHundler = useCallback((e) => {
-    setEmail(e.target.value);
-  }, []);
-
   const authorization = useCallback(() => {
     dispatch(authorizationRequest({ name, surname, email }));
-    setName('');
-    setSurname('');
-    setEmail('');
     history.push('/user');
   }, [dispatch, name, surname, email, history]);
 
@@ -69,9 +54,9 @@ export function AuthorizationPage() {
         <Board>
           <Title>Fill out your profile</Title>
           <Form>
-            <Input onChange={nameHundler} value={name} type="text" placeholder="name" />
-            <Input onChange={surnameHundler} value={surname} type="text" placeholder="surname" />
-            <Input onChange={emailHundler} value={email} type="email" placeholder="email" />
+            <Input onChangeText={setName} value={name} type="text" placeholder="name" />
+            <Input onChangeText={setSurname} value={surname} type="text" placeholder="surname" />
+            <Input onChangeText={setEmail} value={email} type="email" placeholder="email" />
             <Button onClick={authorization}>Save</Button>
           </Form>
         </Board>
@@ -90,12 +75,6 @@ const Title = styled.p`
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 1.3px;
-`;
-
-const Input = styled.input`
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
 `;
 
 const Form = styled.form`

@@ -16,7 +16,7 @@ export function UserProfile() {
   }, [dispatch, history]);
 
   const goToMainPage = useCallback(() => {
-    history.push('/main');
+    history.push('/memory-game');
   }, [history]);
 
   return (

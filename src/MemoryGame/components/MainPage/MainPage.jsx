@@ -34,7 +34,7 @@ export function MainPage() {
   };
 
   const goToUserPage = useCallback(() => {
-    history.push('/user');
+    history.push('/user-profile');
   }, [history]);
 
   const logout = useCallback(() => {

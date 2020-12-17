@@ -1,15 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
 import { Button, Board } from '../components';
 import { Card } from './components';
-import { logout as logoutAction } from '../AuthorizationPage/actions';
 
 export function MainPage() {
   const [counter, setCounter] = useState(120);
   const history = useHistory();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     let timer;
@@ -37,11 +34,6 @@ export function MainPage() {
     history.push('/user-profile');
   }, [history]);
 
-  const logout = useCallback(() => {
-    dispatch(logoutAction());
-    history.push('/');
-  }, [dispatch, history]);
-
   return (
     <Board>
       <Timer>
@@ -57,7 +49,7 @@ export function MainPage() {
             <Button onClick={goToUserPage}>User interface</Button>
           </StyledButton>
           <StyledButton>
-            <Button onClick={logout}>Logout</Button>
+            <Button type="logout">Logout</Button>
           </StyledButton>
         </ButtonContainer>
       </Timer>

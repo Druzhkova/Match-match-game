@@ -1,19 +1,11 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { Button, Board } from '../components';
 import { GameDifficultyCard, SkirtSelectionCard } from './components';
-import { logout as logoutAction } from '../AuthorizationPage/actions';
 
 export function UserProfile() {
-  const dispatch = useDispatch();
   const history = useHistory();
-
-  const logout = useCallback(() => {
-    dispatch(logoutAction());
-    history.push('/');
-  }, [dispatch, history]);
 
   const goToMainPage = useCallback(() => {
     history.push('/memory-game');
@@ -26,7 +18,7 @@ export function UserProfile() {
           <Button onClick={goToMainPage}>Start Game</Button>
         </StyledButton>
         <StyledButton>
-          <Button onClick={logout}>Logout</Button>
+          <Button type="logout">Logout</Button>
         </StyledButton>
       </ButtonContainer>
       <Container>

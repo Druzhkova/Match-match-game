@@ -7,24 +7,28 @@ import { chooseDifficultyGame } from '../../actions';
 export function GameDifficultyCard() {
   const dispatch = useDispatch();
 
-  const chooseLevelLow = useCallback(() => {
+  const onClickLowLevelButton = useCallback(() => {
     dispatch(chooseDifficultyGame('Low'));
   }, [dispatch]);
 
-  const chooseLevelMedium = useCallback(() => {
+  const onClickMediumLevelButton = useCallback(() => {
     dispatch(chooseDifficultyGame('Medium'));
   }, [dispatch]);
 
-  const chooseLevelHight = useCallback(() => {
+  const onClickHightLevelButton = useCallback(() => {
     dispatch(chooseDifficultyGame('Hight'));
   }, [dispatch]);
 
   return (
     <Container>
       <Title>Game Difficulty</Title>
-      <Button onClick={chooseLevelLow}>Low (5*2)</Button>
-      <Button onClick={chooseLevelMedium}>Medium (6*3)</Button>
-      <Button onClick={chooseLevelHight}>Hight (8*3)</Button>
+      <Button onClick={onClickLowLevelButton}>Low (5*2)</Button>
+      <Button
+        onClick={onClickMediumLevelButton}
+      >
+        Medium (6*3)
+      </Button>
+      <Button onClick={onClickHightLevelButton}>Hight (8*3)</Button>
     </Container>
   );
 }

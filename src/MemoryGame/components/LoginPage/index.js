@@ -1,3 +1,3 @@
-export { AuthorizationPage } from './AuthorizationPage';
+export { LoginPage } from './LoginPage';
 export { authorizationReducer } from './reducer';
 export { authorizationMiddleware, bootstrapMiddleware, logoutMiddleware } from './middleware';

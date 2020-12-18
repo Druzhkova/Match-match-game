@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Button, Board, Input } from '../components';
-import { authorizationRequest } from './actions';
+import { loginRequest } from './actions';
 
-export function AuthorizationPage() {
+export function LoginPage() {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ export function AuthorizationPage() {
   const dispatch = useDispatch();
 
   const authorization = useCallback(() => {
-    dispatch(authorizationRequest({ name, surname, email }));
+    dispatch(loginRequest({ name, surname, email }));
     history.push('/user-profile');
   }, [dispatch, name, surname, email, history]);
 
@@ -23,9 +23,9 @@ export function AuthorizationPage() {
       <Board>
         <Title>Fill out your profile</Title>
         <Form>
-          <Input onChangeText={setName} placeholder="name" />
-          <Input onChangeText={setSurname} placeholder="surname" />
-          <Input onChangeText={setEmail} placeholder="email" />
+          <Input onChangeText={setName} value={name} placeholder="name" />
+          <Input onChangeText={setSurname} value={surname} placeholder="surname" />
+          <Input onChangeText={setEmail} value={email} placeholder="email" />
           <Button onClick={authorization}>Save</Button>
         </Form>
       </Board>

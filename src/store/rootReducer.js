@@ -4,5 +4,5 @@ import { authorizationReducer, UserProfileReducer, mainPageReduser } from '../Me
 export const rootReducer = combineReducers({
   mainPage: mainPageReduser,
   userProfile: UserProfileReducer,
-  authorizationPage: authorizationReducer,
+  loginPage: authorizationReducer,
 });

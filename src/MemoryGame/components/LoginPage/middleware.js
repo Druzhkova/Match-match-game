@@ -1,7 +1,7 @@
 import {
-  AUTHORIZATION_REQUEST,
-  authorizationSuccess,
-  authorizationFailure,
+  LOGIN_REQUEST,
+  loginSuccess,
+  loginFailure,
   BOOTSTRAP_START,
   bootstrapFinish,
   LOGOUT,
@@ -9,12 +9,12 @@ import {
 
 export const authorizationMiddleware = (store) => (next) => (action) => {
   try {
-    if (action.type === AUTHORIZATION_REQUEST) {
+    if (action.type === LOGIN_REQUEST) {
       localStorage.setItem('isAuthorized', JSON.stringify(action.payload));
-      store.dispatch(authorizationSuccess(JSON.parse(localStorage.getItem('isAuthorized'))));
+      store.dispatch(loginSuccess(JSON.parse(localStorage.getItem('isAuthorized'))));
     }
   } catch (e) {
-    store.dispatch(authorizationFailure());
+    store.dispatch(loginFailure());
   }
 
   next(action);
@@ -24,9 +24,9 @@ export const bootstrapMiddleware = (store) => (next) => (action) => {
   if (action.type === BOOTSTRAP_START) {
     const isAuthorized = localStorage.getItem('isAuthorized');
     if (isAuthorized) {
-      store.dispatch(authorizationSuccess(JSON.parse(localStorage.getItem('isAuthorized'))));
+      store.dispatch(loginSuccess(JSON.parse(localStorage.getItem('isAuthorized'))));
     } else {
-      store.dispatch(authorizationFailure());
+      store.dispatch(loginFailure());
     }
     store.dispatch(bootstrapFinish());
   }

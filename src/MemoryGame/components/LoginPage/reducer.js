@@ -1,5 +1,5 @@
 import {
-  AUTHORIZATION_SUCCESS, AUTHORIZATION_FAILURE, BOOTSTRAP_FINISH, LOGOUT,
+  LOGIN_SUCCESS, LOGIN_FAILURE, BOOTSTRAP_FINISH, LOGOUT,
 } from './actions';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 
 export function authorizationReducer(state = initialState, action) {
   switch (action.type) {
-    case AUTHORIZATION_SUCCESS: {
+    case LOGIN_SUCCESS: {
       return {
         ...state,
         isAuthorized: true,
@@ -18,7 +18,7 @@ export function authorizationReducer(state = initialState, action) {
       };
     }
 
-    case AUTHORIZATION_FAILURE: {
+    case LOGIN_FAILURE: {
       return {
         ...state,
         isAuthorized: false,

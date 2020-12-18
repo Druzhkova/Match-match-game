@@ -16,7 +16,7 @@ export function StartPage() {
   }, [setOutlineIsVisible]);
 
   const onClickHundler = useCallback(() => {
-    history.push('/authorization');
+    history.push('/loginPage');
   }, [history]);
 
   return (

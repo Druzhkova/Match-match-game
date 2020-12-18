@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { logout as logoutAction } from '../../AuthorizationPage/actions';
+import { logout as logoutAction } from '../../LoginPage/actions';
 
 export function Button({
   children, onClick, type, active, width = '100%',

@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  AuthorizationPage, UserProfile,
+  LoginPage, UserProfile,
 } from './components';
 
-import { bootstrapStart } from './components/AuthorizationPage/actions';
+import { bootstrapStart } from './components/LoginPage/actions';
 
 export function MemoryGame() {
   const { bootstraped, isAuthorized } = useSelector((state) => state.authorizationPage);
 
-  const renderMainContent = () => (isAuthorized ? <UserProfile /> : <AuthorizationPage />);
+  const renderMainContent = () => (isAuthorized ? <UserProfile /> : <LoginPage />);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(bootstrapStart());

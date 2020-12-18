@@ -1,9 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Button } from '../Button';
 
-export function Board({ children }) {
+export function Board({
+  children, headerIsVisible = false, textHeaderButton = 'button', onClickHeaderButton,
+}) {
   return (
     <Container>
+      {
+        headerIsVisible
+          ? (
+            <HeaderBoard>
+              <Button width="auto" onClick={onClickHeaderButton}>{ textHeaderButton }</Button>
+              <Button width="auto" type="logout">Logout</Button>
+            </HeaderBoard>
+          )
+          : null
+      }
       <div>{children}</div>
     </Container>
   );
@@ -42,4 +55,14 @@ const Container = styled.div`
     filter: blur(40px);
     background: linear-gradient(235deg, #2196f3, #010615, #2196f3);
   }
+`;
+
+const HeaderBoard = styled.div`
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

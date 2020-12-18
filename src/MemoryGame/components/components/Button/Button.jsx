@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { logout as logoutAction } from '../../AuthorizationPage/actions';
 
 export function Button({
-  children, onClick, type, active,
+  children, onClick, type, active, width = '100%',
 }) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -25,6 +25,7 @@ export function Button({
       customType={type}
       onClick={onClickHundler}
       active={active}
+      width={width}
     >
       { children }
 
@@ -33,8 +34,8 @@ export function Button({
 }
 
 const StyledButton = styled.button`
-  width: 100%;
-  margin: 15px 0 0 0;
+  width: ${(props) => props.width};
+  margin: 15px 5px 0;
   padding: 10px 16px;
   font-size: 16px;
   color: white;

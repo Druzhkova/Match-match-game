@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { Button, Board } from '../components';
+import { Board } from '../components';
 import { Card } from './components';
 
 export function MainPage() {
@@ -35,7 +35,7 @@ export function MainPage() {
   }, [history]);
 
   return (
-    <Board>
+    <Board headerIsVisible textHeaderButton="User interface" onClickHeaderButton={goToUserPage}>
       <Timer>
         {counter === 0 ? 'Time over' : (
           <div>
@@ -44,14 +44,6 @@ export function MainPage() {
             {timeFormat(counter)}
           </div>
         )}
-        <ButtonContainer>
-          <StyledButton>
-            <Button onClick={goToUserPage}>User interface</Button>
-          </StyledButton>
-          <StyledButton>
-            <Button type="logout">Logout</Button>
-          </StyledButton>
-        </ButtonContainer>
       </Timer>
       <Container>
         <Card frontImg="/images/сhristmas-tree.jpg" backImg="/images/christmas_presents.jpg" />
@@ -65,13 +57,10 @@ export function MainPage() {
 
 const Timer = styled.div`
   position: absolute;
-  top: 0;
-  right: 15px;
-  width: 90%;
+  top: 15px;
+  left: 15px;
+  /* width: 90%; */
   color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 const Container = styled.div`
@@ -79,15 +68,4 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const ButtonContainer = styled.div`
-  width: 210px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const StyledButton = styled.div`
-  width: auto
 `;

@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
 export function StartPage() {
-  const [buttonOutlineIsVisible, setButtonOutlineIsVisible] = useState(true);
+  const [outlineIsVisible, setOutlineIsVisible] = useState(true);
 
   const history = useHistory();
 
-  const showButtonOutline = useCallback(() => {
-    setButtonOutlineIsVisible(true);
-  }, [setButtonOutlineIsVisible]);
+  const showOutline = useCallback(() => {
+    setOutlineIsVisible(true);
+  }, [setOutlineIsVisible]);
 
-  const hideButtonOutline = useCallback(() => {
-    setButtonOutlineIsVisible(false);
-  }, [setButtonOutlineIsVisible]);
+  const hideOutline = useCallback(() => {
+    setOutlineIsVisible(false);
+  }, [setOutlineIsVisible]);
 
   const onClickHundler = useCallback(() => {
     history.push('/authorization');
@@ -21,12 +21,12 @@ export function StartPage() {
 
   return (
     <StartButton
-      onMouseOut={showButtonOutline}
-      onMouseOver={hideButtonOutline}
+      onMouseOut={showOutline}
+      onMouseOver={hideOutline}
       onClick={onClickHundler}
     >
       {
-        buttonOutlineIsVisible
+        outlineIsVisible
           ? (
             <>
               <Span />

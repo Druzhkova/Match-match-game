@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { Button, Board } from '../components';
+import { Board } from '../components';
 import { GameDifficultyCard, SkirtSelectionCard } from './components';
 
 export function UserProfile() {
@@ -12,15 +12,7 @@ export function UserProfile() {
   }, [history]);
 
   return (
-    <Board>
-      <ButtonContainer>
-        <StyledButton>
-          <Button onClick={goToMainPage}>Start Game</Button>
-        </StyledButton>
-        <StyledButton>
-          <Button type="logout">Logout</Button>
-        </StyledButton>
-      </ButtonContainer>
+    <Board headerIsVisible textHeaderButton="Start Game" onClickHeaderButton={goToMainPage}>
       <Container>
         <RulesGame>
           <h2>How to play:</h2>
@@ -54,20 +46,6 @@ const Container = styled.div`
 const CardContainer = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-const ButtonContainer = styled.div`
-  position: absolute;
-  top: 0;
-  right: 15px;
-  width: 190px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const StyledButton = styled.div`
-  width: auto
 `;
 
 const RulesGame = styled.div`

@@ -23,9 +23,9 @@ export function AuthorizationPage() {
       <Board>
         <Title>Fill out your profile</Title>
         <Form>
-          <Input onChangeText={setName} value={name} type="text" placeholder="name" />
-          <Input onChangeText={setSurname} value={surname} type="text" placeholder="surname" />
-          <Input onChangeText={setEmail} value={email} type="email" placeholder="email" />
+          <Input onChangeText={setName} placeholder="name" />
+          <Input onChangeText={setSurname} placeholder="surname" />
+          <Input onChangeText={setEmail} placeholder="email" />
           <Button onClick={authorization}>Save</Button>
         </Form>
       </Board>

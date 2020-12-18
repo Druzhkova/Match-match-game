@@ -11,8 +11,8 @@ export function Board({
         headerIsVisible
           ? (
             <HeaderBoard>
-              <Button width="auto" onClick={onClickHeaderButton}>{ textHeaderButton }</Button>
-              <Button width="auto" type="logout">Logout</Button>
+              <Button onClick={onClickHeaderButton}>{ textHeaderButton }</Button>
+              <Button type="logout">Logout</Button>
             </HeaderBoard>
           )
           : null

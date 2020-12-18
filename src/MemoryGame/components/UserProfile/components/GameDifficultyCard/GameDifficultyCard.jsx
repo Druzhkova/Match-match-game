@@ -37,24 +37,24 @@ export function GameDifficultyCard() {
   return (
     <Container>
       <Title>Game Difficulty</Title>
-      <Button
+      <StyledButton
         active={activeButton.lowLevelButton}
         onClick={onClickLowLevelButton}
       >
         Low (5*2)
-      </Button>
-      <Button
+      </StyledButton>
+      <StyledButton
         active={activeButton.mediumLevelButton}
         onClick={onClickMediumLevelButton}
       >
         Medium (6*3)
-      </Button>
-      <Button
+      </StyledButton>
+      <StyledButton
         active={activeButton.hightLevelButton}
         onClick={onClickHightLevelButton}
       >
         Hight (8*3)
-      </Button>
+      </StyledButton>
     </Container>
   );
 }
@@ -75,4 +75,8 @@ const Container = styled.div`
 const Title = styled.p`
   margin: 0 0 15px 0;
   font-weight: bold;
+`;
+
+const StyledButton = styled(Button)`
+  width: 100%;
 `;

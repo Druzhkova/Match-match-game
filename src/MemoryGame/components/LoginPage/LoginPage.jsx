@@ -26,7 +26,7 @@ export function LoginPage() {
           <Input onChangeText={setName} value={name} placeholder="name" />
           <Input onChangeText={setSurname} value={surname} placeholder="surname" />
           <Input onChangeText={setEmail} value={email} placeholder="email" />
-          <Button onClick={authorization}>Save</Button>
+          <StyledButton onClick={authorization}>Save</StyledButton>
         </Form>
       </Board>
     </Container>
@@ -50,4 +50,8 @@ const Form = styled.form`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+`;
+
+const StyledButton = styled(Button)`
+  width: 100%;
 `;

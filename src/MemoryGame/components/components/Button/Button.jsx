@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { logout as logoutAction } from '../../AuthorizationPage/actions';
 
 export function Button({
-  children, onClick, type,
+  children, onClick, type, active,
 }) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -22,8 +22,9 @@ export function Button({
 
   return (
     <StyledButton
-      custonType={type}
+      customType={type}
       onClick={onClickHundler}
+      active={active}
     >
       { children }
 
@@ -41,7 +42,7 @@ const StyledButton = styled.button`
   border-radius: 6px;
   box-shadow: 0 2px 0 #215076;
 
-  ${(props) => (props.custonType === 'active' ? `
+  ${(props) => (props.active ? `
       background: #28608f;
   ` : `
     background: #5da0d6;

@@ -1,7 +1,7 @@
 import { CHOOSE_DIFFICULTY_GAME, CHOOSE_SKIRT_CARD } from './actions';
 
 const initialState = {
-  difficultyGame: '',
+  difficultyGame: 'low',
   skirtCard: '',
   activeButton: [false, false, false],
 };

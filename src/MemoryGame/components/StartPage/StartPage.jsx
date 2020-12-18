@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
 export function StartPage() {
-  const [displaySpan, setDisplaySpan] = useState('block');
+  const [buttonOutlineIsVisible, setButtonOutlineIsVisible] = useState(true);
+
   const history = useHistory();
 
   const showButtonOutline = useCallback(() => {
-    setDisplaySpan('block');
-  }, [setDisplaySpan]);
+    setButtonOutlineIsVisible(true);
+  }, [setButtonOutlineIsVisible]);
 
   const hideButtonOutline = useCallback(() => {
-    setDisplaySpan('none');
-  }, [setDisplaySpan]);
+    setButtonOutlineIsVisible(false);
+  }, [setButtonOutlineIsVisible]);
 
   const onClickHundler = useCallback(() => {
     history.push('/authorization');
@@ -20,21 +21,28 @@ export function StartPage() {
 
   return (
     <StartButton
-      onMouseOver={hideButtonOutline}
       onMouseOut={showButtonOutline}
+      onMouseOver={hideButtonOutline}
       onClick={onClickHundler}
     >
-      <Span display={displaySpan} />
-      <Span display={displaySpan} />
-      <Span display={displaySpan} />
-      <Span display={displaySpan} />
+      {
+        buttonOutlineIsVisible
+          ? (
+            <>
+              <Span />
+              <Span />
+              <Span />
+              <Span />
+            </>
+          )
+          : null
+      }
       <span>Start memory game</span>
     </StartButton>
   );
 }
 
 const Span = styled.span`
-  display: ${(props) => props.display};
   position: absolute;
   overflow: hidden;
 

@@ -1,57 +1,49 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { Button } from '../../../components';
 import { chooseDifficultyGame } from '../../actions';
 
 export function GameDifficultyCard() {
-  const [activeButton, setActiveButton] = useState({
-    lowLevelButton: true,
-    mediumLevelButton: false,
-    hightLevelButton: false,
-  });
-
+  const [activeButton, setActiveButton] = useState('Low');
   const dispatch = useDispatch();
 
-  const onClickLowLevelButton = useCallback(() => {
-    dispatch(chooseDifficultyGame('Low'));
-    setActiveButton({
-      ...activeButton, lowLevelButton: true, mediumLevelButton: false, hightLevelButton: false,
-    });
+  const getButtonBackgroundColor = useCallback((typeButton) => (activeButton === typeButton ? '#28608f' : '#5da0d6'), [activeButton]);
+
+  useEffect(() => {
+    dispatch(chooseDifficultyGame(activeButton));
   }, [dispatch, activeButton]);
+
+  const onClickLowLevelButton = useCallback(() => {
+    setActiveButton('Low');
+  }, []);
 
   const onClickMediumLevelButton = useCallback(() => {
-    dispatch(chooseDifficultyGame('Medium'));
-    setActiveButton({
-      ...activeButton, lowLevelButton: false, mediumLevelButton: true, hightLevelButton: false,
-    });
-  }, [dispatch, activeButton]);
+    setActiveButton('Medium');
+  }, []);
 
   const onClickHightLevelButton = useCallback(() => {
-    dispatch(chooseDifficultyGame('Hight'));
-    setActiveButton({
-      ...activeButton, lowLevelButton: false, mediumLevelButton: false, hightLevelButton: true,
-    });
-  }, [dispatch, activeButton]);
+    setActiveButton('Hight');
+  }, []);
 
   return (
     <Container>
       <Title>Game Difficulty</Title>
       <StyledButton
-        active={activeButton.lowLevelButton}
         onClick={onClickLowLevelButton}
+        background={getButtonBackgroundColor('Low')}
       >
         Low (5*2)
       </StyledButton>
       <StyledButton
-        active={activeButton.mediumLevelButton}
         onClick={onClickMediumLevelButton}
+        background={getButtonBackgroundColor('Medium')}
       >
         Medium (6*3)
       </StyledButton>
       <StyledButton
-        active={activeButton.hightLevelButton}
         onClick={onClickHightLevelButton}
+        background={getButtonBackgroundColor('Hight')}
       >
         Hight (8*3)
       </StyledButton>
@@ -79,4 +71,5 @@ const Title = styled.p`
 
 const StyledButton = styled(Button)`
   width: 100%;
+  background: ${(props) => props.background}
 `;

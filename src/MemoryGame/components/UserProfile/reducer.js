@@ -1,9 +1,8 @@
 import { CHOOSE_DIFFICULTY_GAME, CHOOSE_SKIRT_CARD } from './actions';
 
 const initialState = {
-  difficultyGame: 'low',
+  difficultyGame: '',
   skirtCard: '',
-  activeButton: [false, false, false],
 };
 
 export function UserProfileReducer(state = initialState, action) {
@@ -12,8 +11,6 @@ export function UserProfileReducer(state = initialState, action) {
       return {
         ...state,
         difficultyGame: action.payload,
-        // columnsCount: action.payload === 'Low' ? 5 : action.payload === 'Medium' ? 6 : 8,
-        // rowСount: action.payload === 'Low' ? 2 : 3,
       };
     }
 

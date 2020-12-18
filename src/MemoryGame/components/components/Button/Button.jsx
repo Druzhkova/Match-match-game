@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { logout as logoutAction } from '../../LoginPage/actions';
 
 export function Button({
-  children, onClick, type, active, className,
+  children, onClick, type, ...restProps // className
 }) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -24,8 +24,7 @@ export function Button({
     <StyledButton
       customType={type}
       onClick={onClickHundler}
-      active={active}
-      className={className}
+      {...restProps}
     >
       { children }
 
@@ -42,12 +41,7 @@ const StyledButton = styled.button`
   border: none;
   border-radius: 6px;
   box-shadow: 0 2px 0 #215076;
-
-  ${(props) => (props.active ? `
-      background: #28608f;
-  ` : `
-    background: #5da0d6;
-  `)} 
+  background: #5da0d6;
 
   &:hover {
     background: #28608f;

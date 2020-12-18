@@ -19,27 +19,34 @@ export function LoginPage() {
   }, [dispatch, name, surname, email, history]);
 
   return (
-    <Container>
-      <Board>
-        <Title>Fill out your profile</Title>
-        <Form>
-          <Input onChangeText={setName} value={name} placeholder="name" />
-          <Input onChangeText={setSurname} value={surname} placeholder="surname" />
-          <Input onChangeText={setEmail} value={email} placeholder="email" />
-          <StyledButton onClick={authorization}>Save</StyledButton>
-        </Form>
-      </Board>
-    </Container>
+    <StyledBoard>
+      <Title>Fill out your profile</Title>
+      <Form>
+        <label htmlFor="name">
+          <InputTitle>Username*</InputTitle>
+          <Input onChangeText={setName} value={name} id="name" />
+        </label>
+        <label htmlFor="surname">
+          <InputTitle>Surname</InputTitle>
+          <Input onChangeText={setSurname} value={surname} id="surname" />
+        </label>
+        <label htmlFor="email">
+          <InputTitle>Email</InputTitle>
+          <Input onChangeText={setEmail} value={email} id="email" />
+        </label>
+        <StyledButton onClick={authorization}>Save</StyledButton>
+      </Form>
+    </StyledBoard>
   );
 }
 
-const Container = styled.div`
-  display: ${(props) => props.display};
+const StyledBoard = styled(Board)`
   color: #fff;
+  padding: 50px 40px;
 `;
 
 const Title = styled.p`
-  margin: 0 0 15px 0;
+  margin: 0 0 25px 0;
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 1.3px;
@@ -54,4 +61,10 @@ const Form = styled.form`
 
 const StyledButton = styled(Button)`
   width: 100%;
+`;
+
+const InputTitle = styled.span`
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
 `;

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { Button } from '../Button';
 
 export function Board({
-  children, headerIsVisible = false, textHeaderButton = 'button', onClickHeaderButton,
+  children, headerIsVisible = false, textHeaderButton = 'button', onClickHeaderButton, ...restProps
 }) {
   return (
-    <Container>
+    <Container {...restProps}>
       {
         headerIsVisible
           ? (

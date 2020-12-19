@@ -1,14 +1,16 @@
 import {
-  LOGIN_SUCCESS, LOGIN_FAILURE, BOOTSTRAP_FINISH, LOGOUT,
+  LOGIN_SUCCESS, LOGIN_FAILURE, BOOTSTRAP_FINISH, LOGOUT, CHANGE_DIFFICULTY_GAME, CHANGE_SKIRT_CARD,
 } from './actions';
 
 const initialState = {
-  isAuthorized: false,
   userData: {},
+  isAuthorized: false,
   bootstraped: false,
+  difficultyGame: '',
+  skirtCard: '',
 };
 
-export function authorizationReducer(state = initialState, action) {
+export function memoryGameReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN_SUCCESS: {
       return {
@@ -37,6 +39,20 @@ export function authorizationReducer(state = initialState, action) {
         ...state,
         isAuthorized: false,
         userData: {},
+      };
+    }
+
+    case CHANGE_DIFFICULTY_GAME: {
+      return {
+        ...state,
+        difficultyGame: action.payload,
+      };
+    }
+
+    case CHANGE_SKIRT_CARD: {
+      return {
+        ...state,
+        skirtCard: action.payload,
       };
     }
 

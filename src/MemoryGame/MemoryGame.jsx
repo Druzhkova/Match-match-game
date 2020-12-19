@@ -4,7 +4,7 @@ import {
   LoginPage, UserProfile,
 } from './components';
 
-import { bootstrapStart } from './components/LoginPage/actions';
+import { bootstrapStart } from './actions';
 
 export function MemoryGame() {
   const { bootstraped, isAuthorized } = useSelector((state) => state.authorizationPage);

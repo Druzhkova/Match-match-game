@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { Button } from '../../../components';
-import { chooseDifficultyGame } from '../../actions';
+import { changeDifficultyGame } from '../../../../actions';
 
 export function GameDifficultyCard() {
   const [activeButton, setActiveButton] = useState('Low');
@@ -11,7 +11,7 @@ export function GameDifficultyCard() {
   const getButtonBackgroundColor = useCallback((typeButton) => (activeButton === typeButton ? '#28608f' : '#5da0d6'), [activeButton]);
 
   useEffect(() => {
-    dispatch(chooseDifficultyGame(activeButton));
+    dispatch(changeDifficultyGame(activeButton));
   }, [dispatch, activeButton]);
 
   const onClickLowLevelButton = useCallback(() => {

@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { chooseSkirtCard } from '../../actions';
+import { changeSkirtCard } from '../../../../actions';
 
 export function SkirtSelectionCard() {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export function SkirtSelectionCard() {
   const getCardBoxShadow = useCallback((typeCard) => (activeCard === typeCard ? '0 0 10px black' : '0 0 5px black'), [activeCard]);
 
   useEffect(() => {
-    dispatch(chooseSkirtCard(activeCard));
+    dispatch(changeSkirtCard(activeCard));
   }, [activeCard, dispatch]);
 
   const onClickFirstCard = useCallback(() => {

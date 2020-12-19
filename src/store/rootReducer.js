@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import { authorizationReducer, UserProfileReducer, mainPageReduser } from '../MemoryGame/components';
+import { memoryGameReducer } from '../MemoryGame';
 
 export const rootReducer = combineReducers({
-  mainPage: mainPageReduser,
-  userProfile: UserProfileReducer,
-  loginPage: authorizationReducer,
+  memoryGame: memoryGameReducer,
 });

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "//druzhkova.github.io/Match-match-game/static/css/main.6b52bc4e.chunk.css",
-    "main.js": "//druzhkova.github.io/Match-match-game/static/js/main.c6c85d61.chunk.js",
-    "main.js.map": "//druzhkova.github.io/Match-match-game/static/js/main.c6c85d61.chunk.js.map",
-    "runtime-main.js": "//druzhkova.github.io/Match-match-game/static/js/runtime-main.133f1d56.js",
-    "runtime-main.js.map": "//druzhkova.github.io/Match-match-game/static/js/runtime-main.133f1d56.js.map",
-    "static/js/2.b84f3a67.chunk.js": "//druzhkova.github.io/Match-match-game/static/js/2.b84f3a67.chunk.js",
-    "static/js/2.b84f3a67.chunk.js.map": "//druzhkova.github.io/Match-match-game/static/js/2.b84f3a67.chunk.js.map",
-    "static/js/3.0f732aab.chunk.js": "//druzhkova.github.io/Match-match-game/static/js/3.0f732aab.chunk.js",
-    "static/js/3.0f732aab.chunk.js.map": "//druzhkova.github.io/Match-match-game/static/js/3.0f732aab.chunk.js.map",
-    "index.html": "//druzhkova.github.io/Match-match-game/index.html",
-    "static/css/main.6b52bc4e.chunk.css.map": "//druzhkova.github.io/Match-match-game/static/css/main.6b52bc4e.chunk.css.map",
-    "static/js/2.b84f3a67.chunk.js.LICENSE.txt": "//druzhkova.github.io/Match-match-game/static/js/2.b84f3a67.chunk.js.LICENSE.txt"
+    "main.css": "/Match-match-game/static/css/main.6b52bc4e.chunk.css",
+    "main.js": "/Match-match-game/static/js/main.788bdc19.chunk.js",
+    "main.js.map": "/Match-match-game/static/js/main.788bdc19.chunk.js.map",
+    "runtime-main.js": "/Match-match-game/static/js/runtime-main.ab4fde9f.js",
+    "runtime-main.js.map": "/Match-match-game/static/js/runtime-main.ab4fde9f.js.map",
+    "static/js/2.91085779.chunk.js": "/Match-match-game/static/js/2.91085779.chunk.js",
+    "static/js/2.91085779.chunk.js.map": "/Match-match-game/static/js/2.91085779.chunk.js.map",
+    "static/js/3.c47171c1.chunk.js": "/Match-match-game/static/js/3.c47171c1.chunk.js",
+    "static/js/3.c47171c1.chunk.js.map": "/Match-match-game/static/js/3.c47171c1.chunk.js.map",
+    "index.html": "/Match-match-game/index.html",
+    "static/css/main.6b52bc4e.chunk.css.map": "/Match-match-game/static/css/main.6b52bc4e.chunk.css.map",
+    "static/js/2.91085779.chunk.js.LICENSE.txt": "/Match-match-game/static/js/2.91085779.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.133f1d56.js",
-    "static/js/2.b84f3a67.chunk.js",
+    "static/js/runtime-main.ab4fde9f.js",
+    "static/js/2.91085779.chunk.js",
     "static/css/main.6b52bc4e.chunk.css",
-    "static/js/main.c6c85d61.chunk.js"
+    "static/js/main.788bdc19.chunk.js"
   ]
 }

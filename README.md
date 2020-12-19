@@ -32,6 +32,6 @@
  
 An example of an interface, your design may be different:
 
-<img src="./images/image1.jpg">
-<img src="./images/image2.jpg">
-<img src="./images/image3.jpg">
+<img src="./src/assets/image1.jpg">
+<img src="./src/assets/image2.jpg">
+<img src="./src/assets/image3.jpg">

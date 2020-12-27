@@ -8,7 +8,7 @@ export function SkirtSelectionCard() {
   const dispatch = useDispatch();
   const [activeCard, setActiveCard] = useState(0);
 
-  const getCardBoxShadow = useCallback((typeCard) => (activeCard === typeCard ? '0 0 10px black' : '0 0 5px black'), [activeCard]);
+  const getActivCard = useCallback((typeCard) => (activeCard === typeCard), [activeCard]);
 
   useEffect(() => {
     dispatch(changeSkirtCard(activeCard));
@@ -29,17 +29,29 @@ export function SkirtSelectionCard() {
   return (
     <Container>
       <Title>Skirt cards</Title>
-      <div>
-        <Image onClick={onClickFirstCard} boxShadow={getCardBoxShadow(0)} src={back1} />
-        <Image onClick={onClickSecondCard} boxShadow={getCardBoxShadow(1)} src={back2} />
-        <Image onClick={onClickThirdCard} boxShadow={getCardBoxShadow(2)} src={back3} />
-      </div>
+      <Inner>
+        <Image
+          onClick={onClickFirstCard}
+          styleActive={getActivCard(0)}
+          src={back1}
+        />
+        <Image
+          onClick={onClickSecondCard}
+          styleActive={getActivCard(1)}
+          src={back2}
+        />
+        <Image
+          onClick={onClickThirdCard}
+          styleActive={getActivCard(2)}
+          src={back3}
+        />
+      </Inner>
     </Container>
   );
 }
 
 const Container = styled.div`
-  max-width: 400px; 
+  max-width: 420px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,6 +62,11 @@ const Container = styled.div`
   box-shadow: 0 0 5px black;
 `;
 
+const Inner = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const Title = styled.p`
   margin: 0 0 15px 0;
   font-weight: bold;
@@ -57,8 +74,16 @@ const Title = styled.p`
 `;
 
 const Image = styled.img`
-  width: 100px;
+  height: 130px;
+${(props) => (props.styleActive ? `
+  height: 140px;
+  width: 120px;
+  box-shadow: 0 0 10px black;
+` : `
+  height: 130px;
+  width: 110px;
+  box-shadow: 0 0 5px black;
+`)}
   margin: 10px;
   cursor: pointer;
-  box-shadow: ${(props) => props.boxShadow};
 `;

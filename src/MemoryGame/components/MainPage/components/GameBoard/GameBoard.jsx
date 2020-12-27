@@ -31,7 +31,7 @@ export function GameBoard({
       return (
         <GameBoardView
           boardType="start"
-          title="Memory game!"
+          title="Are you ready?"
           text="Click anywhere to start!"
         />
       );

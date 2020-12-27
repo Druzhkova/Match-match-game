@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Match-match-game/static/css/main.6b52bc4e.chunk.css",
-    "main.js": "/Match-match-game/static/js/main.d13d59ad.chunk.js",
-    "main.js.map": "/Match-match-game/static/js/main.d13d59ad.chunk.js.map",
+    "main.js": "/Match-match-game/static/js/main.74bd9358.chunk.js",
+    "main.js.map": "/Match-match-game/static/js/main.74bd9358.chunk.js.map",
     "runtime-main.js": "/Match-match-game/static/js/runtime-main.4799c79b.js",
     "runtime-main.js.map": "/Match-match-game/static/js/runtime-main.4799c79b.js.map",
     "static/js/2.9557fae3.chunk.js": "/Match-match-game/static/js/2.9557fae3.chunk.js",
@@ -13,8 +13,8 @@
     "static/css/main.6b52bc4e.chunk.css.map": "/Match-match-game/static/css/main.6b52bc4e.chunk.css.map",
     "static/js/2.9557fae3.chunk.js.LICENSE.txt": "/Match-match-game/static/js/2.9557fae3.chunk.js.LICENSE.txt",
     "static/media/back1.ea3233d5.jpg": "/Match-match-game/static/media/back1.ea3233d5.jpg",
-    "static/media/back2.d99cde26.jpg": "/Match-match-game/static/media/back2.d99cde26.jpg",
-    "static/media/back3.e347e94a.jpg": "/Match-match-game/static/media/back3.e347e94a.jpg",
+    "static/media/back2.968dd901.jpg": "/Match-match-game/static/media/back2.968dd901.jpg",
+    "static/media/back3.f09466cc.jpg": "/Match-match-game/static/media/back3.f09466cc.jpg",
     "static/media/img10.af993784.jpg": "/Match-match-game/static/media/img10.af993784.jpg",
     "static/media/img2.d49e62d1.jpg": "/Match-match-game/static/media/img2.d49e62d1.jpg",
     "static/media/img3.a18ae5d5.jpg": "/Match-match-game/static/media/img3.a18ae5d5.jpg",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.4799c79b.js",
     "static/js/2.9557fae3.chunk.js",
     "static/css/main.6b52bc4e.chunk.css",
-    "static/js/main.d13d59ad.chunk.js"
+    "static/js/main.74bd9358.chunk.js"
   ]
 }

@@ -7,6 +7,7 @@ import { loginRequest } from '../../actions';
 
 export function LoginPage() {
   const [name, setName] = useState('');
+  const [nameError, setNameError] = useState(false);
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
 
@@ -14,6 +15,10 @@ export function LoginPage() {
   const dispatch = useDispatch();
 
   const authorization = useCallback(() => {
+    if (name.length === 0) {
+      setNameError(true);
+      return;
+    }
     dispatch(loginRequest({ name, surname, email }));
     history.push('/user-profile');
   }, [dispatch, name, surname, email, history]);
@@ -24,7 +29,7 @@ export function LoginPage() {
       <Form>
         <label htmlFor="name">
           <InputTitle>Username*</InputTitle>
-          <Input onChangeText={setName} value={name} id="name" />
+          <StyledInput onChangeText={setName} value={name} id="name" error={nameError} />
         </label>
         <label htmlFor="surname">
           <InputTitle>Surname</InputTitle>
@@ -34,6 +39,7 @@ export function LoginPage() {
           <InputTitle>Email</InputTitle>
           <Input onChangeText={setEmail} value={email} id="email" />
         </label>
+        <Note>* - required field</Note>
         <StyledButton onClick={authorization}>Save</StyledButton>
       </Form>
     </StyledBoard>
@@ -67,4 +73,15 @@ const InputTitle = styled.span`
   display: block;
   margin-bottom: 5px;
   font-size: 16px;
+`;
+
+const StyledInput = styled(Input)`
+  background: ${(props) => (props.error ? '#ff9393' : '#fff')};
+`;
+
+const Note = styled.span`
+  font-size: 14px;
+  text-align: 'left';
+  width: 100%;
+  margin: 5px 0;
 `;

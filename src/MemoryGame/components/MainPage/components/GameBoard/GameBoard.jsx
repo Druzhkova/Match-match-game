@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { GameBoardView, Card, VictoryBoard } from './components';
 
 export function GameBoard({
-  cards, flipped, handleClick, disabled, solved, time,
+  cards, flipped, handleClick, disabled, solved, gameTime,
 }) {
   const statusGame = useSelector((state) => state.memoryGame.statusGame);
 
@@ -43,7 +43,7 @@ export function GameBoard({
           title="WELL DONE!"
           text="Click anywhere to try again!"
         >
-          <VictoryBoard time={time} />
+          <VictoryBoard gameTime={gameTime} />
         </GameBoardView>
       );
 

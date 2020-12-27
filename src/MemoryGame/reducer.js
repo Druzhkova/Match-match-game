@@ -1,15 +1,12 @@
 import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  RESULTS_SUCCESS,
   BOOTSTRAP_FINISH,
   LOGOUT,
   CHANGE_WIDTH_GAME_BOARD,
   CHANGE_SKIRT_CARD,
-  OPEN_CARD,
-  DONE_CARD,
-  DELETE_CARD,
   CHANGE_STATUS_GAME,
-  CHANGE_STATUS_CARD,
 } from './actions';
 
 const initialState = {
@@ -20,10 +17,8 @@ const initialState = {
   bootstraped: false,
   widthGameBoard: 650,
   skirtCard: 0,
-  cardStatus: {
-    open: false,
-    done: false,
-  },
+  playerResults: null,
+  isResults: false,
 };
 
 export function memoryGameReducer(state = initialState, action) {
@@ -43,6 +38,13 @@ export function memoryGameReducer(state = initialState, action) {
       };
     }
 
+    case RESULTS_SUCCESS: {
+      return {
+        ...state,
+        playerResults: action.payload,
+      };
+    }
+
     case BOOTSTRAP_FINISH: {
       return {
         ...state,
@@ -55,13 +57,6 @@ export function memoryGameReducer(state = initialState, action) {
         ...state,
         isAuthorized: false,
         userData: {},
-      };
-    }
-
-    case CHANGE_STATUS_CARD: {
-      return {
-        ...state,
-        statusGame: action.payload,
       };
     }
 
@@ -84,33 +79,6 @@ export function memoryGameReducer(state = initialState, action) {
       return {
         ...state,
         skirtCard: action.payload,
-      };
-    }
-
-    case OPEN_CARD: {
-      return {
-        ...state,
-        cardStatus: {
-          ...state.cardStatus,
-          open: action.payload,
-        },
-      };
-    }
-
-    case DONE_CARD: {
-      return {
-        ...state,
-        cardStatus: {
-          ...state.cardStatus,
-          done: action.payload,
-        },
-      };
-    }
-
-    case DELETE_CARD: {
-      return {
-        ...state,
-        gameCards: state.gameCards.filter((card) => card.id !== action.payload),
       };
     }
 

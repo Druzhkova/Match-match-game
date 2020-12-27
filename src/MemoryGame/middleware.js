@@ -5,6 +5,8 @@ import {
   BOOTSTRAP_START,
   bootstrapFinish,
   LOGOUT,
+  RESULTS_REQUEST,
+  resultsSuccess,
 } from './actions';
 
 export const authorizationMiddleware = (store) => (next) => (action) => {
@@ -37,6 +39,25 @@ export const bootstrapMiddleware = (store) => (next) => (action) => {
 export const logoutMiddleware = () => (next) => (action) => {
   if (action.type === LOGOUT) {
     localStorage.removeItem('isAuthorized');
+  }
+
+  next(action);
+};
+
+export const resultsMiddleware = (store) => (next) => (action) => {
+  if (action.type === RESULTS_REQUEST) {
+    const results = [];
+
+    if (JSON.parse(localStorage.getItem('results'))) {
+      JSON.parse(localStorage.getItem('results')).map((obj) => results.push(obj));
+      results.push(action.payload);
+      localStorage.setItem('results', JSON.stringify(results));
+    } else {
+      results.push(action.payload);
+      localStorage.setItem('results', JSON.stringify(results));
+    }
+
+    store.dispatch(resultsSuccess(JSON.parse(localStorage.getItem('results'))));
   }
 
   next(action);

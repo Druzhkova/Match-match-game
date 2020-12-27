@@ -91,7 +91,7 @@ const InputTitle = styled.span`
 `;
 
 const StyledInput = styled(Input)`
-  border: ${(props) => (props.error ? '2px solid red' : 'none')};
+  border: ${(props) => (props.error ? '1px solid #cc4545' : 'none')};
 `;
 
 const Note = styled.span`
@@ -102,7 +102,7 @@ const Note = styled.span`
 `;
 
 const ErrorText = styled.div`
-  color: red;
+  color: #cc4545;
   font-size: 14px;
   margin: 10px 0 5px;
 `;

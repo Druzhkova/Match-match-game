@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Board } from '../components';
 import { GameBoard } from './components';
-import { changeStatusGame } from '../../actions';
+import { changeStatusGame, resultsRequest } from '../../actions';
 
 export function MainPage() {
   const [cards, setCards] = useState([]);
@@ -97,12 +97,6 @@ export function MainPage() {
   }
 
   useEffect(() => {
-    if (solved.length !== 0 && solved.length === cards.length) {
-      dispatch(changeStatusGame('won'));
-    }
-  }, [solved, cards, dispatch, statusGame]);
-
-  useEffect(() => {
     dispatch(changeStatusGame('stopped'));
   }, [dispatch]);
 
@@ -120,6 +114,13 @@ export function MainPage() {
 
     return `${minutes}:${putZeroBeforeSingleDigits(seconds)}`;
   }, []);
+
+  useEffect(() => {
+    if (solved.length !== 0 && solved.length === cards.length) {
+      dispatch(changeStatusGame('won'));
+      dispatch(resultsRequest({ name: JSON.parse(localStorage.getItem('isAuthorized')).name, time: timeFormat(counter) }));
+    }
+  }, [solved, cards, dispatch]);
 
   useEffect(() => {
     let timer;
@@ -159,7 +160,7 @@ export function MainPage() {
           handleClick={handleClick}
           disabled={disabled}
           solved={solved}
-          time={timeFormat(counter)}
+          gameTime={timeFormat(counter)}
         />
       </Container>
     </Board>

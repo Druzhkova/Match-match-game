@@ -71,5 +71,6 @@ const Title = styled.p`
 
 const StyledButton = styled(Button)`
   width: 100%;
+  min-width: 143px;
   background: ${(props) => props.background}
 `;

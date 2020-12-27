@@ -7,7 +7,7 @@ export function VictoryBoard({ time }) {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>
-        {name || 'Your time'}
+        {name}
         {': '}
         {time}
       </h1>

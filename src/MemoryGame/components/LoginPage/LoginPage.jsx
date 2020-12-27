@@ -27,13 +27,24 @@ export function LoginPage() {
     evt.preventDefault();
   }, []);
 
+  const onBlurHundler = useCallback(() => {
+    if (name.length === 0) {
+      setNameError(true);
+    }
+  }, [name]);
+
+  const onFocusHundler = useCallback(() => {
+    setNameError(false);
+  }, []);
+
   return (
     <StyledBoard>
       <Title>Fill out your profile</Title>
       <Form onSubmit={onSubmitHundler}>
         <label htmlFor="name">
           <InputTitle>Username*</InputTitle>
-          <StyledInput onChangeText={setName} value={name} id="name" error={nameError} />
+          {nameError ? <ErrorText> Fill out required field</ErrorText> : null}
+          <StyledInput onChangeText={setName} onFocus={onFocusHundler} onBlur={onBlurHundler} value={name} id="name" error={nameError} />
         </label>
         <label htmlFor="surname">
           <InputTitle>Surname</InputTitle>
@@ -80,7 +91,7 @@ const InputTitle = styled.span`
 `;
 
 const StyledInput = styled(Input)`
-  background: ${(props) => (props.error ? '#ff9393' : '#fff')};
+  border: ${(props) => (props.error ? '2px solid red' : 'none')};
 `;
 
 const Note = styled.span`
@@ -88,4 +99,10 @@ const Note = styled.span`
   text-align: 'left';
   width: 100%;
   margin: 5px 0;
+`;
+
+const ErrorText = styled.div`
+  color: red;
+  font-size: 14px;
+  margin: 10px 0 5px;
 `;

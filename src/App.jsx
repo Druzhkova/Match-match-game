@@ -9,7 +9,7 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/" component={StartPage} />
-        <Route exact path="/loginPage" component={LoginPage} />
+        <Route path="/loginPage" component={LoginPage} />
         <Route path="/user-profile" component={UserProfile} />
         <Route path="/memory-game" component={MainPage} />
         <Redirect to="/" />

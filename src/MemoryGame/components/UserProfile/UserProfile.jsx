@@ -1,15 +1,19 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Board } from '../components';
 import { GameDifficultyCard, SkirtSelectionCard } from './components';
+import { changeStatusGame } from '../../actions';
 
 export function UserProfile() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const goToMainPage = useCallback(() => {
     history.push('/memory-game');
-  }, [history]);
+    dispatch(changeStatusGame('stopped'));
+  }, [history, dispatch]);
 
   return (
     <Board headerIsVisible textHeaderButton="Start Game" onClickHeaderButton={goToMainPage}>

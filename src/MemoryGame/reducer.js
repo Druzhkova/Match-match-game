@@ -1,13 +1,29 @@
 import {
-  LOGIN_SUCCESS, LOGIN_FAILURE, BOOTSTRAP_FINISH, LOGOUT, CHANGE_DIFFICULTY_GAME, CHANGE_SKIRT_CARD,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  BOOTSTRAP_FINISH,
+  LOGOUT,
+  CHANGE_WIDTH_GAME_BOARD,
+  CHANGE_SKIRT_CARD,
+  OPEN_CARD,
+  DONE_CARD,
+  DELETE_CARD,
+  CHANGE_STATUS_GAME,
+  CHANGE_STATUS_CARD,
 } from './actions';
 
 const initialState = {
   userData: {},
+  statusGame: '',
+  numberOfCardsPairs: 5,
   isAuthorized: false,
   bootstraped: false,
-  difficultyGame: '',
-  skirtCard: '',
+  widthGameBoard: 650,
+  skirtCard: 0,
+  cardStatus: {
+    open: false,
+    done: false,
+  },
 };
 
 export function memoryGameReducer(state = initialState, action) {
@@ -42,10 +58,25 @@ export function memoryGameReducer(state = initialState, action) {
       };
     }
 
-    case CHANGE_DIFFICULTY_GAME: {
+    case CHANGE_STATUS_CARD: {
       return {
         ...state,
-        difficultyGame: action.payload,
+        statusGame: action.payload,
+      };
+    }
+
+    case CHANGE_STATUS_GAME: {
+      return {
+        ...state,
+        statusGame: action.payload,
+      };
+    }
+
+    case CHANGE_WIDTH_GAME_BOARD: {
+      return {
+        ...state,
+        widthGameBoard: action.payload,
+        numberOfCardsPairs: action.payload === 650 ? 5 : action.payload === 780 ? 9 : 12,
       };
     }
 
@@ -53,6 +84,33 @@ export function memoryGameReducer(state = initialState, action) {
       return {
         ...state,
         skirtCard: action.payload,
+      };
+    }
+
+    case OPEN_CARD: {
+      return {
+        ...state,
+        cardStatus: {
+          ...state.cardStatus,
+          open: action.payload,
+        },
+      };
+    }
+
+    case DONE_CARD: {
+      return {
+        ...state,
+        cardStatus: {
+          ...state.cardStatus,
+          done: action.payload,
+        },
+      };
+    }
+
+    case DELETE_CARD: {
+      return {
+        ...state,
+        gameCards: state.gameCards.filter((card) => card.id !== action.payload),
       };
     }
 

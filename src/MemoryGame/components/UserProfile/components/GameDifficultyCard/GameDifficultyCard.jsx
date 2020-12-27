@@ -2,28 +2,28 @@ import React, { useCallback, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { Button } from '../../../components';
-import { changeDifficultyGame } from '../../../../actions';
+import { changeWidthGameBoard } from '../../../../actions';
 
 export function GameDifficultyCard() {
-  const [activeButton, setActiveButton] = useState('Low');
+  const [widthGameBoard, setWidthGameBoard] = useState(650);
   const dispatch = useDispatch();
 
-  const getButtonBackgroundColor = useCallback((typeButton) => (activeButton === typeButton ? '#28608f' : '#5da0d6'), [activeButton]);
-
   useEffect(() => {
-    dispatch(changeDifficultyGame(activeButton));
-  }, [dispatch, activeButton]);
+    dispatch(changeWidthGameBoard(widthGameBoard));
+  }, [dispatch, widthGameBoard]);
+
+  const getButtonBackgroundColor = useCallback((typeButton) => (widthGameBoard === typeButton ? '#28608f' : '#5da0d6'), [widthGameBoard]);
 
   const onClickLowLevelButton = useCallback(() => {
-    setActiveButton('Low');
+    setWidthGameBoard(650);
   }, []);
 
   const onClickMediumLevelButton = useCallback(() => {
-    setActiveButton('Medium');
+    setWidthGameBoard(780);
   }, []);
 
   const onClickHightLevelButton = useCallback(() => {
-    setActiveButton('Hight');
+    setWidthGameBoard(1040);
   }, []);
 
   return (
@@ -31,19 +31,19 @@ export function GameDifficultyCard() {
       <Title>Game Difficulty</Title>
       <StyledButton
         onClick={onClickLowLevelButton}
-        background={getButtonBackgroundColor('Low')}
+        background={getButtonBackgroundColor(650)}
       >
         Low (5*2)
       </StyledButton>
       <StyledButton
         onClick={onClickMediumLevelButton}
-        background={getButtonBackgroundColor('Medium')}
+        background={getButtonBackgroundColor(780)}
       >
         Medium (6*3)
       </StyledButton>
       <StyledButton
         onClick={onClickHightLevelButton}
-        background={getButtonBackgroundColor('Hight')}
+        background={getButtonBackgroundColor(1040)}
       >
         Hight (8*3)
       </StyledButton>

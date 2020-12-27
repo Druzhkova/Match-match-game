@@ -2,10 +2,11 @@ import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { changeSkirtCard } from '../../../../actions';
+import { back1, back2, back3 } from '../../../../../assets/cards';
 
 export function SkirtSelectionCard() {
   const dispatch = useDispatch();
-  const [activeCard, setActiveCard] = useState('сhristmas-tree');
+  const [activeCard, setActiveCard] = useState(0);
 
   const getCardBoxShadow = useCallback((typeCard) => (activeCard === typeCard ? '0 0 10px black' : '0 0 5px black'), [activeCard]);
 
@@ -14,24 +15,24 @@ export function SkirtSelectionCard() {
   }, [activeCard, dispatch]);
 
   const onClickFirstCard = useCallback(() => {
-    setActiveCard('сhristmas-tree');
+    setActiveCard(0);
   }, []);
 
   const onClickSecondCard = useCallback(() => {
-    setActiveCard('snow-maiden');
+    setActiveCard(1);
   }, []);
 
   const onClickThirdCard = useCallback(() => {
-    setActiveCard('santa-claus');
+    setActiveCard(2);
   }, []);
 
   return (
     <Container>
       <Title>Skirt cards</Title>
       <div>
-        <Image onClick={onClickFirstCard} boxShadow={getCardBoxShadow('сhristmas-tree')} src="/images/сhristmas-tree.jpg" />
-        <Image onClick={onClickSecondCard} boxShadow={getCardBoxShadow('snow-maiden')} src="/images/snow-maiden.jpg" />
-        <Image onClick={onClickThirdCard} boxShadow={getCardBoxShadow('santa-claus')} src="/images/santa-claus.jpg" />
+        <Image onClick={onClickFirstCard} boxShadow={getCardBoxShadow(0)} src={back1} />
+        <Image onClick={onClickSecondCard} boxShadow={getCardBoxShadow(1)} src={back2} />
+        <Image onClick={onClickThirdCard} boxShadow={getCardBoxShadow(2)} src={back3} />
       </div>
     </Container>
   );

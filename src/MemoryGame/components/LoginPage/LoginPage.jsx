@@ -23,10 +23,14 @@ export function LoginPage() {
     history.push('/user-profile');
   }, [dispatch, name, surname, email, history]);
 
+  const onSubmitHundler = useCallback((evt) => {
+    evt.preventDefault();
+  }, []);
+
   return (
     <StyledBoard>
       <Title>Fill out your profile</Title>
-      <Form>
+      <Form onSubmit={onSubmitHundler}>
         <label htmlFor="name">
           <InputTitle>Username*</InputTitle>
           <StyledInput onChangeText={setName} value={name} id="name" error={nameError} />

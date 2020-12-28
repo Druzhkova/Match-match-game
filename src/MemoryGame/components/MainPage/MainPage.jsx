@@ -118,7 +118,12 @@ export function MainPage() {
   useEffect(() => {
     if (solved.length !== 0 && solved.length === cards.length) {
       dispatch(changeStatusGame('won'));
-      dispatch(resultsRequest({ name: JSON.parse(localStorage.getItem('isAuthorized')).name, time: timeFormat(counter) }));
+      dispatch(resultsRequest({
+        name: JSON.parse(localStorage.getItem('isAuthorized'))
+          ? JSON.parse(localStorage.getItem('isAuthorized')).name
+          : 'Panda',
+        time: timeFormat(counter),
+      }));
     }
   }, [solved, cards, dispatch]);
 

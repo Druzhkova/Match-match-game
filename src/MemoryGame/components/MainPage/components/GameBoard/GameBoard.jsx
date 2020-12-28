@@ -43,6 +43,12 @@ export function GameBoard({
           title="WELL DONE!"
           text="Click anywhere to try again!"
         >
+          {' '}
+          <p style={{ fontWeight: 'bold' }}>
+            Your time :
+            {' '}
+            {gameTime}
+          </p>
           <VictoryBoard gameTime={gameTime} />
         </GameBoardView>
       );

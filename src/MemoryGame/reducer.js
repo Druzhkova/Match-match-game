@@ -18,7 +18,6 @@ const initialState = {
   widthGameBoard: 650,
   skirtCard: 0,
   playerResults: null,
-  isResults: false,
 };
 
 export function memoryGameReducer(state = initialState, action) {

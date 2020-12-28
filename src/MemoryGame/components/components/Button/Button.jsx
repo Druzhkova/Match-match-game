@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { logout as logoutAction } from '../../../actions';
 
 export function Button({
-  children, onClick, type, ...restProps // className
+  children, onClick, type, ...restProps
 }) {
   const dispatch = useDispatch();
   const history = useHistory();

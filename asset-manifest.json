@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Match-match-game/static/css/main.62dfb005.chunk.css",
-    "main.js": "/Match-match-game/static/js/main.0c8e0ebc.chunk.js",
-    "main.js.map": "/Match-match-game/static/js/main.0c8e0ebc.chunk.js.map",
+    "main.js": "/Match-match-game/static/js/main.f5535312.chunk.js",
+    "main.js.map": "/Match-match-game/static/js/main.f5535312.chunk.js.map",
     "runtime-main.js": "/Match-match-game/static/js/runtime-main.4799c79b.js",
     "runtime-main.js.map": "/Match-match-game/static/js/runtime-main.4799c79b.js.map",
     "static/js/2.d8ad1ee3.chunk.js": "/Match-match-game/static/js/2.d8ad1ee3.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.4799c79b.js",
     "static/js/2.d8ad1ee3.chunk.js",
     "static/css/main.62dfb005.chunk.css",
-    "static/js/main.0c8e0ebc.chunk.js"
+    "static/js/main.f5535312.chunk.js"
   ]
 }

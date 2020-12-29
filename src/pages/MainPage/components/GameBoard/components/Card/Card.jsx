@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import {
@@ -8,9 +8,17 @@ import {
 export function Card({
   handleClick, id, flipped, type, disabled, solved,
 }) {
-  const img = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12];
-  const skirts = [back1, back2, back3];
   const currentSkirts = useSelector((state) => state.memoryGame.skirtCard);
+
+  const choseFrontImg = useMemo(() => {
+    const img = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12];
+    img.filter((image, index) => (((index === type)) ? image : null));
+  }, [type]);
+
+  const choseBackImg = useMemo(() => {
+    const skirts = [back1, back2, back3];
+    skirts.filter((image, index) => (index === currentSkirts ? image : null));
+  }, [currentSkirts]);
 
   return (
     <>
@@ -22,10 +30,10 @@ export function Card({
           flipped={flipped}
         >
           <FrontImg
-            src={img.filter((image, index) => (((index === type)) ? image : null))}
+            src={choseFrontImg}
           />
           <BackImg
-            src={skirts.filter((image, index) => (index === currentSkirts ? image : null))}
+            src={choseBackImg}
           />
         </Flipper>
       </FlipContainer>

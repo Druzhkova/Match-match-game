@@ -2,8 +2,8 @@ import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, Board, Input } from '../components';
-import { loginRequest } from '../../actions';
+import { Button, Board, Input } from '../../components';
+import { loginRequest } from '../MainPage/actions';
 
 export function LoginPage() {
   const [name, setName] = useState('');

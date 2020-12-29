@@ -2,9 +2,9 @@ import React, { useCallback, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { Board } from '../components';
+import { Board } from '../../components';
 import { GameBoard } from './components';
-import { changeStatusGame, resultsRequest } from '../../actions';
+import { changeStatusGame, resultsRequest } from './actions';
 
 export function MainPage() {
   const [cards, setCards] = useState([]);

@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   LoginPage, UserProfile,
-} from './components';
+} from './index';
 
-import { bootstrapStart } from './actions';
+import { bootstrapStart } from './MainPage/actions';
 
 export function MemoryGame() {
   const { bootstraped, isAuthorized } = useSelector((state) => state.authorizationPage);

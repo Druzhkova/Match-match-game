@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { changeSkirtCard } from '../../../../actions';
-import { back1, back2, back3 } from '../../../../../assets/cards';
+import { changeSkirtCard } from '../../../MainPage/actions';
+import { back1, back2, back3 } from '../../../../assets/cards';
 
 export function SkirtSelectionCard() {
   const dispatch = useDispatch();

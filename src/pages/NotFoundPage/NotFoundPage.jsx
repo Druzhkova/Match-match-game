@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import notFound from '../../../assets/not-found.gif';
-import notFound1 from '../../../assets/not-found1.png';
+import notFound from '../../assets/not-found.gif';
+import notFound1 from '../../assets/not-found1.png';
 
 export function NotFoundPage() {
   return (
@@ -18,7 +18,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: #E1E3E2;
-  padding: 30px 0 0 0;
+  padding: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import {
   img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, back1, back2, back3,
-} from '../../../../../../../assets/cards';
+} from '../../../../../../assets/cards';
 
 export function Card({
   handleClick, id, flipped, type, disabled, solved,

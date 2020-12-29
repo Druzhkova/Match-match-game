@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { rootReducer } from './rootReducer';
 import {
   authorizationMiddleware, bootstrapMiddleware, logoutMiddleware, resultsMiddleware,
-} from '../MemoryGame';
+} from '../pages/MainPage/middleware';
 
 export const store = createStore(rootReducer, composeWithDevTools(
   applyMiddleware(

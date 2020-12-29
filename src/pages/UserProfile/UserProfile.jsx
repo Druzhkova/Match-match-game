@@ -2,9 +2,9 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Board } from '../components';
+import { Board } from '../../components';
 import { GameDifficultyCard, SkirtSelectionCard } from './components';
-import { changeStatusGame } from '../../actions';
+import { changeStatusGame } from '../MainPage/actions';
 
 export function UserProfile() {
   const history = useHistory();

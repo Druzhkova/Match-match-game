@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { Button } from '../../../components';
-import { changeWidthGameBoard } from '../../../../actions';
+import { Button } from '../../../../components';
+import { changeWidthGameBoard } from '../../../MainPage/actions';
 
 export function GameDifficultyCard() {
   const [widthGameBoard, setWidthGameBoard] = useState(650);

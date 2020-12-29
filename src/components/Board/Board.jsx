@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Button } from '../Button';
+import { logout as logoutAction } from '../../pages/MainPage/actions';
 
 export function Board({
   children, headerIsVisible = false, textHeaderButton, onClickHeaderButton, ...restProps
 }) {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const onClickHundler = useCallback(() => {
+    dispatch(logoutAction());
+    history.push('/');
+  }, [dispatch, history]);
+
   return (
     <Container {...restProps}>
       {
@@ -12,7 +23,7 @@ export function Board({
           ? (
             <HeaderBoard>
               <Button onClick={onClickHeaderButton}>{ textHeaderButton }</Button>
-              <Button type="logout">Logout</Button>
+              <Button onClick={onClickHundler}>Logout</Button>
             </HeaderBoard>
           )
           : null

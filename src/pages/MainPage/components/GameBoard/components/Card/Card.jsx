@@ -12,12 +12,12 @@ export function Card({
 
   const choseFrontImg = useMemo(() => {
     const img = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12];
-    img.filter((image, index) => (((index === type)) ? image : null));
+    return img.filter((image, index) => (((index === type)) ? image : null));
   }, [type]);
 
   const choseBackImg = useMemo(() => {
     const skirts = [back1, back2, back3];
-    skirts.filter((image, index) => (index === currentSkirts ? image : null));
+    return skirts.filter((image, index) => (index === currentSkirts ? image : null));
   }, [currentSkirts]);
 
   return (

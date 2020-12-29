@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Match-match-game/static/css/main.62dfb005.chunk.css",
-    "main.js": "/Match-match-game/static/js/main.f11f51a0.chunk.js",
-    "main.js.map": "/Match-match-game/static/js/main.f11f51a0.chunk.js.map",
+    "main.js": "/Match-match-game/static/js/main.45931535.chunk.js",
+    "main.js.map": "/Match-match-game/static/js/main.45931535.chunk.js.map",
     "runtime-main.js": "/Match-match-game/static/js/runtime-main.4799c79b.js",
     "runtime-main.js.map": "/Match-match-game/static/js/runtime-main.4799c79b.js.map",
     "static/js/2.bedc6e71.chunk.js": "/Match-match-game/static/js/2.bedc6e71.chunk.js",
@@ -19,12 +19,13 @@
     "static/media/img2.d49e62d1.jpg": "/Match-match-game/static/media/img2.d49e62d1.jpg",
     "static/media/img3.a18ae5d5.jpg": "/Match-match-game/static/media/img3.a18ae5d5.jpg",
     "static/media/img4.2e38dad3.jpg": "/Match-match-game/static/media/img4.2e38dad3.jpg",
-    "static/media/img5.51c1d1f5.jpg": "/Match-match-game/static/media/img5.51c1d1f5.jpg"
+    "static/media/img5.51c1d1f5.jpg": "/Match-match-game/static/media/img5.51c1d1f5.jpg",
+    "static/media/not-found.b0232c0e.gif": "/Match-match-game/static/media/not-found.b0232c0e.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.4799c79b.js",
     "static/js/2.bedc6e71.chunk.js",
     "static/css/main.62dfb005.chunk.css",
-    "static/js/main.f11f51a0.chunk.js"
+    "static/js/main.45931535.chunk.js"
   ]
 }
